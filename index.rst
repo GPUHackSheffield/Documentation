@@ -25,7 +25,7 @@ This is the documentation for the `Sheffield GPU Hackathon <https://gpuhack.shef
 
 You may find it useful to read the helpful `GPU Hackathon Attendee Guide <https://github.com/olcf/gpu_hackathon_attendee_guide>`_ prepared by Oak Ridge. 
 
-The site encourages user contributions via GitHub and has useful information for how to access the GPU systems used for the Hackathon event.
+The site encourages user contributions via `GitHub <https://github.com/GPUHackSheffield/Documentation>`_ and has useful information for how to access the GPU systems used for the Hackathon event.
 
 
 .. toctree::
