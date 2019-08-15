@@ -1,5 +1,5 @@
-JADE-HPC Facility User guide
-############################
+Sheffield GPU Hackathon
+#######################
 
 .. image:: images/TUOS.png
    :width: 50%
@@ -35,3 +35,4 @@ The site encourages user contributions via `GitHub <https://github.com/GPUHackSh
    jade/index
    ascent/index
    training/index
+   tools/cuda-profiling-for-hpc
