@@ -1,0 +1,9 @@
+_build
+_static
+_build/**
+html/
+.doctrees
+get_docs.py
+*.*~
+old_makefile/
+jade.rst
