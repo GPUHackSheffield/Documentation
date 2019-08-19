@@ -4,8 +4,8 @@ Sheffield GPU Hackathon Documentation
 This is a collection of useful pieces of documentation for the Sheffield GPU Hackathon. User contributions are encouraged.
 
 .. image:: https://readthedocs.org/projects/gpuhackshef/badge/?version=latest
-:target: https://gpuhackshef.readthedocs.io/en/latest/?badge=latest
-:alt: Documentation Status
+  :target: https://gpuhackshef.readthedocs.io/en/latest/?badge=latest
+  :alt: Documentation Status
 
 
 How to Contribute
