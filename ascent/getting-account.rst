@@ -1,4 +1,4 @@
-.. _getting-account:
+.. _ascent_getting-account:
 
 Getting an account
 ==================

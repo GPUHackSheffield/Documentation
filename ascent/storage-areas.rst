@@ -12,13 +12,13 @@ This is where you might want to keep source code and build your application.
 
 NOTE: These directories are read-only from the compute nodes!
 
-.. code-block::
+.. code-block:: bash
 
 	/ccsopen/home/userid
 
 Your personal home directory
 
-.. code-block::
+.. code-block:: bash
 
 	/ccsopen/proj/gen132
 
@@ -33,14 +33,14 @@ GPFS Directories (parallel file system)
 
 This is where you should write data when running on Ascent’s compute nodes.
 
-.. code-block::
+.. code-block:: bash
 
 	/gpfs/wolf/gen132/scratch/userid
 
 Your personal GPFS scratch directory
 
  
-.. code-block::
+.. code-block:: bash
 
 	/gpfs/wolf/gen132/proj-shared
 
