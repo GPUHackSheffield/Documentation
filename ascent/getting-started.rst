@@ -32,11 +32,11 @@ Grab a Single Node in an Interactive Job Using LSF and load the CUDA Toolkit
 
 .. code-block:: bash
 
-	bsub –P GEN132 –nnodes 1 –W 30 –alloc_flags “gpumps” –Is /bin/bash
+	bsub -P GEN132 -nnodes 1 -W 30 -alloc_flags "gpumps" -Is /bin/bash
 	
 GEN132 is the project ID provided for the Hackathon.
 
-The ``-alloc_flags “gpumps”`` enables the MPS server – essentially allowing multiple processes (e.g., MPI ranks) to access the same GPU concurrently. Whether or not to include it depends on your application, but it is included here since (when testing different layouts) you might attempt to target the same GPU with multiple MPI ranks. If you do so without MPS, this program will hang.
+The ``-alloc_flags “gpumps”`` enables the MPS server - essentially allowing multiple processes (e.g., MPI ranks) to access the same GPU concurrently. Whether or not to include it depends on your application, but it is included here since (when testing different layouts) you might attempt to target the same GPU with multiple MPI ranks. If you do so without MPS, this program will hang.
 
 Launch a Simple Job Configuration with jsrun by setting the number of OpenMP threads to ``1`` (for simplicity)
 
@@ -48,7 +48,7 @@ Launch the job
 
 .. code-block:: bash
 
-	jsrun –n6 –c1 –g1 ./hello_jsrun | sort
+	jsrun -n6 -c1 -g1 ./hello_jsrun | sort
 	########################################################################
 	*** MPI Ranks: 6, OpenMP Threads: 1, GPUs per Resource Set: 1 ***
 	========================================================================
