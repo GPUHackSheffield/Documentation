@@ -28,6 +28,6 @@ The site encourages user contributions via `GitHub <https://github.com/GPUHackSh
    :maxdepth: -1
    :hidden:
 
-   bede/index
    nvidia-system/index
+   bede/index
    training/index
