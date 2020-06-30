@@ -25,7 +25,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'GPUHackSheffield'
-copyright = u'2019, Sheffield GPU Hackathon'
+copyright = u'2020, Sheffield GPU Hackathon'
 author = u'University of Sheffield'
 
 # The version info for the project you're documenting, acts as replacement for
