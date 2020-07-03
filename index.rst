@@ -31,3 +31,5 @@ The site encourages user contributions via `GitHub <https://github.com/GPUHackSh
    nvidia-system/index
    bede/index
    training/index
+   tools/nvidia-profiling-tools
+   tools/nvidia-tools-extension
