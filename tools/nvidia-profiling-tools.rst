@@ -49,6 +49,9 @@ Fine-grained kernel profile information can be captured using remote Nsight Comp
    
    nv-nsight-cu-cli -o profile --set full ./myapplication <arguments>
 
+.. note::
+   From CUDA 11.0.194, and Nsight Compute 2020.1.1, ``ncu`` is an alias of ``nv-nsight-cu-cli``
+
 
 This will capture the full set of available metrics, to populate all sections of the Nsight Compute GUI, however this can lead to very long run times to capture all the information.
 
