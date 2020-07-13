@@ -49,6 +49,9 @@ Fine-grained kernel profile information can be captured using remote Nsight Comp
    
    nv-nsight-cu-cli -o profile --set full ./myapplication <arguments>
 
+.. note::
+   From CUDA 11.0.194, and Nsight Compute 2020.1.1, ``ncu`` is an alias of ``nv-nsight-cu-cli``
+
 
 This will capture the full set of available metrics, to populate all sections of the Nsight Compute GUI, however this can lead to very long run times to capture all the information.
 
@@ -82,6 +85,11 @@ Training Material
 * `OLCF: Nsight Compute Tutorial <https://vimeo.com/398929189>`_
 
 Use the following `Nsight report files <https://drive.google.com/open?id=133a90SIupysHfbO3mlyfXfaEivCyV1EP>`_ to follow the tutorial.
+
+
+Cluster Modules
+^^^^^^^^^^^^^^^
+* :ref:`raplab-hackathon<hackathon_facility>`: ``module load nvcompilers/2020``
 
 
 Visual Profiler (legacy)
@@ -119,3 +127,7 @@ Documentation
 ^^^^^^^^^^^^^
 
 + `Nvprof Documentation <https://docs.nvidia.com/cuda/profiler-users-guide/index.html>`_
+
+Cluster Modules
+^^^^^^^^^^^^^^^
+* :ref:`raplab-hackathon<hackathon_facility>`: ``module load cuda/10.1``
