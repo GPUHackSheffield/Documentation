@@ -87,6 +87,11 @@ Training Material
 Use the following `Nsight report files <https://drive.google.com/open?id=133a90SIupysHfbO3mlyfXfaEivCyV1EP>`_ to follow the tutorial.
 
 
+Cluster Modules
+^^^^^^^^^^^^^^^
+* :ref:`raplab-hackathon<hackathon_facility>`: ``module load nvcompilers/2020``
+
+
 Visual Profiler (legacy)
 ------------------------
 .. note::
@@ -122,3 +127,7 @@ Documentation
 ^^^^^^^^^^^^^
 
 + `Nvprof Documentation <https://docs.nvidia.com/cuda/profiler-users-guide/index.html>`_
+
+Cluster Modules
+^^^^^^^^^^^^^^^
+* :ref:`raplab-hackathon<hackathon_facility>`: ``module load cuda/10.1``
