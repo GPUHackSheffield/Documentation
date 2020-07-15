@@ -3,4 +3,4 @@
 Getting an Account
 ==================
 
-Details will be released soon on how an account can be obtained for the hackathon.
+All participants will receive an e-mail with access details. If you did not please let one of the organisers know.

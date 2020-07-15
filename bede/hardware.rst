@@ -3,7 +3,8 @@
 Bede Hardware
 =============
 
-* 32x Main GPU nodes, each (IBM AC922) node has:
+* 32x Main GPU nodes, each node (IBM AC922) has:
+    * 512GB DDR4 RAM
     * 2x IBM POWER9 CPUs (and two NUMA nodes), with
     * 4x NVIDIA V100 GPUs (2 per CPU)
     * Each CPU is connected to its two GPUs via high-bandwidth, low-latency NVLink interconnects (helps if you need to move lots of data to/from GPU memory)

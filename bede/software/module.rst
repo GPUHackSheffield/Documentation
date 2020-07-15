@@ -1,13 +1,14 @@
+.. _bede_module:
+
 Activating software using Environment Modules
 =============================================
 
 Overview and rationale
 ----------------------
 
-'Environment Modules' are the mechanism by which much of the software is made available to the users of the ShARC and Iceberg clusters.
+'Environment Modules' are the mechanism by which much of the software is made available to the users of Bede.
 
-To make a particular piece of software available a user will *load* a module e.g. 
-on ShARC, you can load a particular version of the '``scotch``' library (version 6.0.4, built using the GCC 6.2 compiler and with support for parallel execution using OpenMPI 2.0.1) with: ::
+To make a particular piece of software available a user will *load* a module e.g. you can load a particular version of the '``CUDA``' library with: ::
 
     module load libs/scotch/6.0.4/gcc-6.2-openmpi-2.0.1
 

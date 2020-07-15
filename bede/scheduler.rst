@@ -12,6 +12,18 @@ Slurm is a highly scalable cluster management and job scheduling system, used in
 * it provides a framework for starting, executing, and monitoring work on the set of allocated nodes,
 * it arbitrates contention for resources by managing a queue of pending work.
 
+Loading Slurm
+=============
+
+Slurm must first be loaded before tasks can be scheduled.
+
+.. code-block:: sh
+
+    module load slurm
+
+For more information on modules, see :ref:`bede_module`.
+
+
 Request an Interactive Shell
 ============================
 
@@ -19,21 +31,22 @@ Launch an interactive session on a worker node using the command:
 
 .. code-block:: sh
 
-    srun --pty bash -i
+    srun --pty bash
 
-You can request an interactive node with multiple CPU cores by using the command:
+You can request an interactive node with GPU(s) by using the command:
 
 .. code-block:: sh
 
-    srun -c="N" --pty bash -i
+    # --gpus=1 requests 1 GPU for the session session, the number can be 1, 2 or 4
+    srun --gpus=1 --pty bash
 
-The parameter "N" represents the number of CPU cores upto 4 per interactive job. Please note that requesting multiple cores in an interactive node depends on the availability. During peak times, it is unlikely that you can successfully request a large number of cpu cores interactively.  Therefore, it may be a better approach to submit your job non-interactively. 
 
 You can request additional memory (parameter "nn" represents the amount of memory):
 
 .. code-block:: sh
 
-    srun --mem="NN"G --pty bash -i
+    # Requests 16GB of RAM
+    srun --mem=16G --pty bash
 
 
 
@@ -55,56 +68,56 @@ Next you may specify some additional options, such as memory,CPU or time limit.
 
     #SBATCH --"OPTION"="VALUE"
 
-Load the approipate modules if necessery.
+Load the appropriate modules if necessery.
 
 .. code-block:: sh
 
-    module use "PATH"
-    module use "MODULE NAME"
+    module load PATH
+    module load MODULE_NAME
 
 Finally, run your program by using the Slurm "srun" command.
 
 .. code-block:: sh
 
-    srun "PROGRAM"
+    srun PROGRAM
 
-The next example script requests 40 CPU cores in total and 64Gb memory. Notifications will be sent to an email address.
+The next example script requests 2 GPUs and 16Gb memory. Notifications will be sent to an email address:
 
 .. code-block:: sh
 
     #!/bin/bash
-    #SBATCH --nodes=1
-    #SBATCH --ntasks-per-node=40
-    #SBATCH --mem=64000
-    #SBATCH --mail-user=username@sheffield.ac.uk
+    #SBATCH --gpus=2
+    #SBATCH --mem=16G
+    #SBATCH --mail-user=username@mydomain.com
 
-    module load OpenMPI/3.1.3-GCC-8.2.0-2.31.1
+    module load cuda
+    
+    # Replace my_program with the name of the program you want to run
+    srun my_program
 
-    srun --export=ALL program
-
-Maximum 40 cores can be requested per node in the general use queues.
 
 
 Job Submission
 --------------
 
-Save the shell script (let's say "submission.sh") and use the command
+Save the shell script (let's say "submission.slurm") and use the command
 
-.. code-block:: sh
+.. code-block:: bash
 
-    sbatch submission.sh
+    sbatch submission.slurm
 
 Note the job submission number. For example:
 
-.. code-block:: sh
+.. code-block:: bash
 
     Submitted batch job 1226
 
 Check your output file when the job is finished.  
 
-.. code-block:: sh
+.. code-block:: bash
 
-    cat "JOB_NAME"-1226.out
+    # The JOB_NAME value defaults to "slurm"
+    cat JOB_NAME-1226.out
 
 Common job options
 ==================
@@ -117,7 +130,10 @@ Optional parameters can be added to both interactive and non-interactive jobs. O
     * ``--mem=#``- Request memory (default 4GB), suffixes can be added to signify Megabytes (M) or Gagabytes (G) e.g. ``--mem=16G`` to request 16GB.
     * Alternatively ``--mem-per-cpu=#`` or ``--mem-per-gpu=#`` - Memory can be requested per CPU with ``--mem-per-cpu`` or per GPU ``--mem-per-gpu``, these three options are mutually exclusive.
 * GPU request
-    * ``--gres:gpu=1`` - Request GPU(s)
+    * ``--gpus=1`` - Request GPU(s), the number can be 1, 2 or 4.
+* CPU request
+    * ``-c 1`` or ``--cpus-per-task=1`` - Requests a number of CPUs for this job, 1 CPU in this case.
+    * ``--cpus-per-gpu=2`` - Requests a number of CPUs **per** GPU requested. In this case we've requested 2 CPUs per GPU so if ``--gpus=2`` then 4 CPUs will be requested.
 * Specify output filename
     * ``--output=output.%j.test.out``
 * E-mail notification
@@ -155,4 +171,4 @@ Deletes job from queue:
 
 .. code-block:: sh
 
-    scancel "JOB_ID"
+    scancel JOB_ID

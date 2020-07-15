@@ -18,5 +18,6 @@ NB the system was previously known as NICE-19.
 
    hardware
    account
+   connecting
    scheduler
    software/index

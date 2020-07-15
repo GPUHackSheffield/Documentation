@@ -1,3 +1,5 @@
+.. bede_storage:
+
 File storage
 ############
 * ``/home`` - 4.9TB shared (Lustre) drive for all users.
