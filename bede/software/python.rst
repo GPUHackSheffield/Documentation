@@ -1,5 +1,7 @@
-Python (Anaconda)
-==============
+.. _bede_python_anaconda:
+
+Python and Anaconda
+===================
 
 This page documents the "Anaconda" installation on Bede. This is the
 recommended way of using Python, and the best way to be able to configure custom
@@ -14,13 +16,12 @@ need.
 Using conda Python
 ------------------
 
-After connecting to Bessemer, start an interactive session
-with the ``srun --pty bash -i command``.
+After connecting to Bede, start an interactive session
+with the ``srun --pty bash`` command.
 
-Anaconda Python can be loaded with one of the following:
+Anaconda Python can be loaded with:
 
-    module load Anaconda3/2019.07
-    module load Anaconda3/5.3.0 
+    module load Anaconda3/2020.02
 
 The ``root`` conda environment (the default) provides Python 3 and no extra
 modules, it is automatically updated, and not recommended for general use, just
@@ -35,11 +36,11 @@ system-wide environments will not be reinstalled or copied to your file store,
 they will be *symlinked*, this reduces the space you need in your ``/home``
 directory to install many different Python environments.
 
-To create a clean environment with just Python 3.8 and numpy you can run::
+To create a clean environment with just Python 3.7 and numpy you can run::
 
-    conda create -n mynumpy python=3.8 numpy
+    conda create -n mynumpy python=3.7 numpy
 
-This will download the latest release of Python 3.8 and numpy, and create an
+This will download the latest release of Python 3.7 and numpy, and create an
 environment named ``mynumpy``.
 
 Any version of Python or list of packages can be provided::
@@ -53,33 +54,6 @@ installations, you can ``clone`` that environment::
 
 This will create an environment called ``myexperiment`` which has all the
 same conda packages as the ``myscience`` environment.
-
-
-Installing Packages Inside an Environment
-#########################################
-
-Once you have created your own environment you can install additional packages
-or different versions of packages into it. There are two methods for doing
-this, ``conda`` and ``pip``, if a package is available through conda it is
-strongly recommended that you use conda to install packages. You can search for
-packages using conda::
-
-    conda search pandas
-
-then install the package using::
-
-    conda install pandas
-
-if you are not in your environment you will get a permission denied error
-when trying to install packages, if this happens, create or activate an
-environment you own.
-
-If a package is not available through conda you can search for and install it
-using pip, *i.e.*::
-
-    pip search colormath
-
-    pip install colormath
 
 
 Using conda Environments
@@ -107,6 +81,32 @@ Provided system-wide are a set of anaconda environments, these will be
 installed with the anaconda version number in the environment name, and never
 modified. They will therefore provide a static base for derivative environments
 or for using directly.
+
+Installing Packages Inside an Environment
+#########################################
+
+Once you have created your own environment you can install additional packages
+or different versions of packages into it. There are two methods for doing
+this, ``conda`` and ``pip``, if a package is available through conda it is
+strongly recommended that you use conda to install packages. You can search for
+packages using conda::
+
+    conda search pandas
+
+then install the package using::
+
+    conda install pandas
+
+if you are not in your environment you will get a permission denied error
+when trying to install packages, if this happens, create or activate an
+environment you own.
+
+If a package is not available through conda you can search for and install it
+using pip, *i.e.*::
+
+    pip search colormath
+
+    pip install colormath
 
 Using conda and Python in a batch job
 #####################################

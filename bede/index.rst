@@ -20,4 +20,5 @@ NB the system was previously known as NICE-19.
    account
    connecting
    scheduler
+   module
    software/index
