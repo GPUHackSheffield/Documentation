@@ -5,6 +5,10 @@ Useful Training Material
 
 The following list is a useful catalogue of training material.
 
+A list of useful training material is also available on the gpuhackathons site:
+
+* `GPUHackathon Resources webapge <https://www.gpuhackathons.org/technical-resources>`_
+
 
 Profiling Material
 ------------------
