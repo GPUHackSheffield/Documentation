@@ -67,13 +67,9 @@ should get a prompt resembling the one below: ::
 
     When you login to a cluster you reach one of two login nodes. 
     You **should not** run applications on the login nodes.
-    Running ``qsh`` gives you an interactive terminal 
+    Running ``srun`` gives you an interactive terminal 
     on one of the many worker nodes in the cluster.
 
-    If you only need terminal-based (command-line only) applications 
-    you can run the ``qrsh`` command,
-    which will give you a shell on a worker node, 
-    but without graphical application (X server) support.
 
 
 

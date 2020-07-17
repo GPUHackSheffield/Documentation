@@ -6,7 +6,6 @@ Software on Bede
 
    cuda
    mpi
-   pgi
    python
    pytorch
    tensorflow
