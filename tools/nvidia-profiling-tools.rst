@@ -40,17 +40,17 @@ See the `nsys profiling command switch options <https://docs.nvidia.com/nsight-s
    nsys profile -o timeline --trace cuda,nvtx,osrt,openacc ./myapplication <arguments>
 
 
-Once this file has been downloaded to your local machine, it can be opened in ``nsight-sys`` via ``File > Open > timeline.qdrep``: 
+Once this file has been downloaded to your local machine, it can be opened in ``nsys-ui``/``nsight-sys`` via ``File > Open > timeline.qdrep``: 
 
 
-Fine-grained kernel profile information can be captured using remote Nsight Compute CLI (``nv-nsight-cu-cli``):
+Fine-grained kernel profile information can be captured using remote Nsight Compute CLI (``ncu``/``nv-nsight-cu-cli``):
 
 .. code-block:: bash
    
-   nv-nsight-cu-cli -o profile --set full ./myapplication <arguments>
+   ncu -o profile --set full ./myapplication <arguments>
 
 .. note::
-   From CUDA 11.0.194, and Nsight Compute 2020.1.1, ``ncu`` is an alias of ``nv-nsight-cu-cli``
+   ``ncu`` is available since CUDA ``11.0.194``, and Nsight Compute ``2020.1.1``. For older versions of CUDA use ``nv-nsight-cu-cli`` (if Nsight Compute is installed).
 
 
 This will capture the full set of available metrics, to populate all sections of the Nsight Compute GUI, however this can lead to very long run times to capture all the information.
@@ -60,14 +60,17 @@ For long running applications, it may be favourable to capture a smaller set of 
 The scope of the section being profiled can also be reduced using `NVTX Filtering <https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html#nvtx-filtering>`_; or by targetting specific kernels using ``--kernel-id``, ``--kernel-regex`` and/or ``--launch-skip`` see the `CLI docs for more information <https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html#command-line-options-profile>`_).
 
 
-Once the ``.ncu-rep`` file has been downloaded locally, it can be imported into local Nsight CUDA GUI ``nv-nsight-cu`` via: 
+Once the ``.ncu-rep`` file has been downloaded locally, it can be imported into local Nsight CUDA GUI ``ncu-ui``/``nv-nsight-cu`` via: 
 
 .. code-block:: bash
 
-   nv-nsight-cu profile.ncu-rep
+   ncu-ui profile.ncu-rep
 
 
 **Or** ``File > Open > profile.ncu-rep``, **or** Drag ``profile.ncu-rep`` into the ``nv-nsight-cu`` window.
+
+.. note::
+   Older versions of Nsight Compute (CUDA < ``11.0.194``) used ``nv-nsight-cu`` rather than ``ncu-ui``.
 
 .. note:: 
    Older versions of Nsight Compute generated ``.nsight-cuprof-report`` files, instead of ``.ncu-rep`` files.
@@ -89,7 +92,10 @@ Use the following `Nsight report files <https://drive.google.com/open?id=133a90S
 
 Cluster Modules
 ^^^^^^^^^^^^^^^
-* :ref:`raplab-hackathon<hackathon_facility>`: ``module load nvcompilers/2020``
+* :ref:`raplab-hackathon<hackathon_facility>`: 
+   * ``module load nvcompilers/2020``
+* :ref:`bede<bede_facility>`: 
+   * ``module load nvidia/20.5``
 
 
 Visual Profiler (legacy)
@@ -130,4 +136,10 @@ Documentation
 
 Cluster Modules
 ^^^^^^^^^^^^^^^
-* :ref:`raplab-hackathon<hackathon_facility>`: ``module load cuda/10.1``
+* :ref:`raplab-hackathon<hackathon_facility>`: 
+   * ``module load cuda/10.1``
+   * ``module load nvcompilers/2020``
+* :ref:`bede<bede_facility>`: 
+   * ``module load cuda/10.1``
+   * ``module load cuda/10.2``
+   * ``module load nvidia/20.5``

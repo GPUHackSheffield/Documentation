@@ -25,7 +25,7 @@ About TensorFlow on Bede
    GPU must be requested in order to enable GPU acceleration by adding the flag e.g. ``--gpus=1`` to the scheduler command or job script.
    See :ref:`bede_scheduler` for more information.
 
-Bede has a locally installed IBM `Watson Machine Learning Community Edition (WML CE)<https://developer.ibm.com/linuxonpower/deep-learning-powerai/releases/>`_ Anaconda channel that provides versions of Tensorflow, PyTorch and their dependencies especially built for the POWER architecture. 
+Bede has a locally installed IBM `Watson Machine Learning Community Edition (WML CE) <https://developer.ibm.com/linuxonpower/deep-learning-powerai/releases/>`_ Anaconda channel that provides versions of Tensorflow, PyTorch and their dependencies especially built for the POWER architecture. 
 
 Installation in Home Directory - GPU Version
 --------------------------------------------
@@ -71,17 +71,17 @@ Testing your TensorFlow installation
 
 You can test that TensorFlow is running on the GPU with the following python code ::
 
-import tensorflow as tf
-# Creates a graph
-#If using CPU, replace /device:GPU:0 with /cpu:0
-with tf.device('/device:GPU:0'):
-   a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2, 3], name='a')
-   b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3, 2], name='b')
-   c = tf.matmul(a, b)
-# Creates a session with log_device_placement set to True.
-sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
-# Runs the op.
-print(sess.run(c))
+   import tensorflow as tf
+   # Creates a graph
+   #If using CPU, replace /device:GPU:0 with /cpu:0
+   with tf.device('/device:GPU:0'):
+      a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2, 3], name='a')
+      b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3, 2], name='b')
+      c = tf.matmul(a, b)
+   # Creates a session with log_device_placement set to True.
+   sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
+   # Runs the op.
+   print(sess.run(c))
 
 Which should give the following results: ::
 

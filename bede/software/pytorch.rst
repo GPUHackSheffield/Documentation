@@ -17,7 +17,7 @@ About PyTorch on Bede
    GPU must be requested in order to enable GPU acceleration by adding the flag e.g. ``--gpus=1`` to the scheduler command or job script.
    See :ref:`bede_scheduler` for more information.
 
-Bede has a locally installed IBM `Watson Machine Learning Community Edition (WML CE)<https://developer.ibm.com/linuxonpower/deep-learning-powerai/releases/>`_ Anaconda channel that provides versions of Tensorflow, PyTorch and their dependencies especially built for the POWER architecture.
+Bede has a locally installed IBM `Watson Machine Learning Community Edition (WML CE) <https://developer.ibm.com/linuxonpower/deep-learning-powerai/releases/>`_ Anaconda channel that provides versions of Tensorflow, PyTorch and their dependencies especially built for the POWER architecture.
 
 Installation in Home Directory
 ------------------------------
