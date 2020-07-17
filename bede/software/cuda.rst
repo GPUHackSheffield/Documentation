@@ -16,14 +16,15 @@ You need to first request one or more GPUs within an
 
 
 You then need to ensure a version of the CUDA library (and compiler) is loaded. CUDA version 
-10.2 is currently available on Bede:
+10.1, 10.2 is currently available on Bede:
 
 .. code-block:: bash
 
+   module load cuda/10.1
    module load cuda/10.2
    module load nvidia/20.5
 
-The ``nvidia/20.5`` module contains additional profilers such as ``ncu``.
+The ``nvidia/20.5`` module contains CUDA 10.2 and additional profilers such as ``ncu``.
 
 Confirm which version of CUDA you are using via ``nvcc --version`` e.g.: ::
 
