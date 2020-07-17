@@ -10,12 +10,12 @@ Overview and rationale
 
 To make a particular piece of software available a user will *load* a module e.g. you can load a particular version of the '``CUDA``' library with: ::
 
-    module load cuda/10.1
+    module load cuda/10.2
 
 This command manipulates `environment variables <https://en.wikipedia.org/wiki/Environment_variable>`_ to make this piece of software available.  
 If you then want to switch to using a different version of ``CUDA`` (should another be installed on the cluster you are using) then you can run: ::
 
-    module unload cuda/10.1
+    module unload cuda/10.2
     
 then load the other.  
 
@@ -33,7 +33,7 @@ Module files allow users to select and use the versions they need for their rese
 If you switch to using a cluster other than Bede then you will likely find that environment modules are used there too.  
 Modules are not the only way of managing software on clusters: increasingly common approaches include:
 
-* the :ref:`Conda <bede_python_anaconda>` package manager (Python-centric but can manage software written in any language; can be used on ShARC and Iceberg);
+* the :ref:`Conda <bede_python_anaconda>` package manager (Python-centric but can manage software written in any language);
 
 Basic guide
 -----------
@@ -44,11 +44,11 @@ You can list all (loaded and unloaded) modules on Bede using: ::
 
 You can then load a module using e.g.: ::
 
-    module load cuda/10.1
+    module load cuda/10.2
 
 You can then load further modules e.g.::
 
-    module load nvidia/20.1
+    module load gcc/openmpi-3.0.3
 
 Confirm which modules you have loaded using: ::
 
@@ -56,7 +56,7 @@ Confirm which modules you have loaded using: ::
 
 If you want to stop using a module (by undoing the changes that loading that module made to your environment): ::
 
-    module unload cuda/10.1
+    module unload cuda/10.2
 
 or to unload all loaded modules: ::
 
@@ -72,7 +72,7 @@ Some other things to be aware of:
 * You can load and unload modules in both interactive and batch jobs;
 * Modules may themselves load other modules.  If this is the case for a given module then it is typically noted in our documentation for the corresponding software;
 * The order in which you load modules may be significant (e.g. if module A sets ``SOME_ENV_VAR=apple`` and module B sets ``SOME_ENV_VAR=pear``);
-* Some related module files have been set up so that they are mutually exclusive e.g. on Bede the modules ``cuda/10.1`` and ``cuda/10.2`` cannot be loaded simultaneously (as users should never want to have both loaded).
+* Some related module files have been set up so that they are mutually exclusive e.g. on Bede the modules ``cuda/10.2`` and ``cuda/10.1`` cannot be loaded simultaneously (as users should never want to have both loaded).
 
 
 Module Command Reference

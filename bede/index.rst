@@ -14,11 +14,12 @@ NB the system was previously known as NICE-19.
 
 
 .. toctree::
-   :maxdepth: -1
+   :maxdepth: 2
 
    hardware
    account
    connecting
+   storage
    scheduler
    module
    software/index

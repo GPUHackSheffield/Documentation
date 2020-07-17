@@ -6,7 +6,7 @@ Running and Scheduling Tasks on Bede
 Slurm Workload Manager
 ======================
 
-Slurm is a highly scalable cluster management and job scheduling system, used in Bessemer. As a cluster workload manager, Slurm has three key functions:
+Slurm is a highly scalable cluster management and job scheduling system, used in Bede. As a cluster workload manager, Slurm has three key functions:
 
 * it allocates exclusive and/or non-exclusive access to resources (compute nodes) to users for some duration of time so they can perform work,
 * it provides a framework for starting, executing, and monitoring work on the set of allocated nodes,
@@ -41,12 +41,12 @@ You can request an interactive node with GPU(s) by using the command:
     srun --gpus=1 --pty bash
 
 
-You can request additional memory (parameter "nn" represents the amount of memory):
+You can add additional options, e.g. request additional memory:
 
 .. code-block:: sh
 
-    # Requests 16GB of RAM
-    srun --mem=16G --pty bash
+    # Requests 16GB of RAM with 1 GPU
+    srun --mem=16G --gpus=1 --pty bash
 
 
 
@@ -140,7 +140,7 @@ Optional parameters can be added to both interactive and non-interactive jobs. O
     * ``--mail-user=username@sheffield.ac.uk`` - Send notification to the following e-mail
     * ``--mail-type=type`` - Send notification when type is ``BEGIN``, ``END``, ``FAIL``, ``REQUEUE``, or ``ALL``
 * Naming a job
-    * ``--job-name="my_job_name"``
+    * ``--job-name="my_job_name"`` - The specified name will be appended to your output (``.out``) file name.
 * Add comments to a job
     * ``--comment="My comments"``
 
