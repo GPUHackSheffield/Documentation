@@ -40,6 +40,10 @@ See the `nsys profiling command switch options <https://docs.nvidia.com/nsight-s
    nsys profile -o timeline --trace cuda,nvtx,osrt,openacc ./myapplication <arguments>
 
 
+.. note:: 
+   On :ref:`Bede <bede_facility>` (Power9) the ``--trace`` option ``osrt`` can lead to ``SIGILL`` errors. As this is a default, consider passing ``--trace cuda,nvtx`` as an alternative minimum.
+
+
 Once this file has been downloaded to your local machine, it can be opened in ``nsys-ui``/``nsight-sys`` via ``File > Open > timeline.qdrep``: 
 
 
